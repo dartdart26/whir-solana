@@ -14,7 +14,9 @@ rustup component add --toolchain $RUST_VERSION clippy
 
 # Solana CLI
 sh -c "$(curl -sSfL --proto '=https' --tlsv1.2 https://release.anza.xyz/stable/install)"
-echo 'export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
+SOLANA_BIN="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="$SOLANA_BIN:$PATH"
+echo "export PATH=\"$SOLANA_BIN:$PATH\"" >> ~/.bashrc
 agave-install update
 
 # AVM and Anchor
