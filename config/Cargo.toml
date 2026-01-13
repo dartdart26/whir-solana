@@ -1,0 +1,10 @@
+[package]
+name = "whir-config"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ark-serialize = { workspace = true }
+ark-std = { workspace = true }
+spongefish-pow = { workspace = true }
+whir-common = { workspace = true }

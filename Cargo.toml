@@ -1,0 +1,53 @@
+[workspace]
+members = ["programs/*", "native-prover", "config"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+anchor-lang = "0.32.1"
+# Arkworks dependencies with `default-features = false` to avoid rayon/parallel on Solana
+ark-ff = { version = "0.5", default-features = false, features = ["std"] }
+ark-poly = { version = "0.5", default-features = false, features = ["std"] }
+ark-serialize = { version = "0.5", default-features = false, features = [
+    "std",
+] }
+ark-std = { version = "0.5", default-features = false, features = ["std"] }
+ark-crypto-primitives = { version = "0.5", default-features = false, features = [
+    "merkle_tree",
+    "std",
+] }
+blake3 = "1.7.0"
+# Specify the `custom` feature such that we don't get randomness for the verifier that can't work on a Solana program
+getrandom = { version = "0.2", features = ["custom"] }
+itertools = "0.14"
+postcard = { version = "1.1", features = ["alloc"] }
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+# Spongefishwith `default-features = false` (parallel disabled by default)
+spongefish = { git = "https://github.com/arkworks-rs/spongefish", rev = "ecb4f08373ed930175585c856517efdb1851fb47", default-features = false, features = [
+    "arkworks-algebra",
+] }
+spongefish-pow = { git = "https://github.com/arkworks-rs/spongefish", rev = "ecb4f08373ed930175585c856517efdb1851fb47", default-features = false }
+whir-common = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "common", default-features = false }
+whir-config = { path = "config" }
+whir-prover = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "prover" }
+whir-verifier = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "verifier" }
+
+[profile.release]
+opt-level = 3
+overflow-checks = false
+lto = "fat"
+debug = false
+codegen-units = 1
+strip = "symbols"
+
+[profile.release.build-override]
+opt-level = 3
+overflow-checks = false
+incremental = false
+debug = false
+codegen-units = 1
+strip = "symbols"

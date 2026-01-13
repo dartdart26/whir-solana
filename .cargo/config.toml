@@ -1,0 +1,11 @@
+[target.sbf-solana-solana]
+rustflags = [
+    "-C",
+    "lto=fat",
+    "-C",
+    "opt-level=z",
+    "-C",
+    "link-arg=-z",
+    "-C",
+    "link-arg=notext",
+]

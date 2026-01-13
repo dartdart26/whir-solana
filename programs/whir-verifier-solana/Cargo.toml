@@ -1,0 +1,45 @@
+[package]
+name = "whir_verifier_solana"
+version.workspace = true
+edition.workspace = true
+description = "WHIR PCS Verifier as a Solana Program"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "whir_verifier_solana"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+[dependencies]
+anchor-lang = { workspace = true }
+ark-ff = { workspace = true }
+ark-crypto-primitives = { workspace = true }
+ark-serialize = { workspace = true }
+ark-std = { workspace = true }
+blake3 = { workspace = true }
+getrandom = { workspace = true }
+postcard = { workspace = true }
+serde = { workspace = true }
+spongefish = { workspace = true }
+spongefish-pow = { workspace = true }
+whir-common = { workspace = true, features = [
+    "disable-hash-counter",
+    "disable-ntt-cache",
+    "small-stack",
+] }
+whir-config = { workspace = true }
+whir-verifier = { workspace = true }
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = [
+    'cfg(target_os, values("solana"))',
+] }

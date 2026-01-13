@@ -1,0 +1,33 @@
+[package]
+name = "native-prover"
+version.workspace = true
+edition.workspace = true
+description = "Native prover for generating WHIR proofs for the Solana verifier"
+
+[dependencies]
+anyhow = "1.0.100"
+ark-ff = { workspace = true }
+ark-poly = { workspace = true }
+ark-serialize = { workspace = true }
+ark-std = { workspace = true }
+ark-crypto-primitives = { workspace = true }
+blake3 = { workspace = true }
+itertools = { workspace = true }
+postcard = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+serde_json = "1.0"
+spongefish = { workspace = true }
+spongefish-pow = { workspace = true, features = ["parallel"] }
+whir-common = { workspace = true, features = ["parallel"] }
+whir-config = { workspace = true }
+whir-prover = { workspace = true }
+whir-verifier = { workspace = true }
+
+[[bin]]
+name = "generate-proof"
+path = "src/main.rs"
+
+[lib]
+name = "whir_proof_generator"
+path = "src/lib.rs"
