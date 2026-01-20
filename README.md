@@ -17,7 +17,7 @@ This project includes:
 
 ### WHIR Verifier Tweaks
 
-We use a WHIR fork from https://github.com/dartdart26/whir/tree/separate-verifier-to-upstream to support running the verifier as a Solana program.
+We use a WHIR fork from https://github.com/dartdart26/whir/tree/petar/separate-verifier-to-upstream to support running the verifier as a Solana program.
 
 The following tweaks have been made in it:
 1. Separate WHIR to prover, verifier and common crates. This way, the verifier doesn't use randomness/threading and can safely be used on Solana.
@@ -44,7 +44,7 @@ As of now, the verifier tries to allocate more memory that allowed on Solana whe
 
 ## Dependencies
 
-The project uses the WHIR fork from https://github.com/dartdart26/whir/tree/separate-verifier-to-upstream. This implementation makes possible compiling
+The project uses the WHIR fork from https://github.com/dartdart26/whir/tree/petar/separate-verifier-to-upstream. This implementation makes possible compiling
 and running the verifier as a Solana program.
 
 ## Prerequisites
