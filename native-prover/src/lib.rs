@@ -158,7 +158,7 @@ pub fn verify_proof(
 
     // Verify.
     let verifier = Verifier::new(&params);
-    verifier.verify(&mut verifier_state, &parsed_commitment, &statement)?;
+    verifier.verify(&mut verifier_state, parsed_commitment, statement)?;
 
     Ok(())
 }

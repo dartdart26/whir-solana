@@ -14,7 +14,7 @@ use whir_common::{
         statement::{Statement, Weights},
     },
 };
-use whir_config::{field_size_bytes, F, DOMAIN_SEPARATOR};
+use whir_config::{field_size_bytes, DOMAIN_SEPARATOR, F};
 use whir_verifier::Verifier;
 
 declare_id!("AnycMJFRbi6gLYUtLH9YGVcE9F7PxnC1BijCWQMM3h9a");
@@ -96,7 +96,7 @@ pub mod whir_verifier_solana {
 
         let verifier = Verifier::new(&params);
         verifier
-            .verify(&mut verifier_state, &parsed_commitment, &statement)
+            .verify(&mut verifier_state, parsed_commitment, statement)
             .map_err(|_| WhirError::VerificationFailed)?;
 
         msg!("WHIR Verifier: Verification successful!");

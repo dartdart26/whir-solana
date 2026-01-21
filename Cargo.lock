@@ -658,7 +658,7 @@ dependencies = [
 [[package]]
 name = "common"
 version = "0.1.0"
-source = "git+https://github.com/dartdart26/whir?branch=petar%2Fseparate-verifier-to-upstream#228b961811d0e9ddbdc2d803d9ffd6d6b6a257fb"
+source = "git+https://github.com/dartdart26/whir?rev=87b63e022320e841680fe8ce3dfab690952bb4fe#87b63e022320e841680fe8ce3dfab690952bb4fe"
 dependencies = [
  "ark-crypto-primitives",
  "ark-ff",
@@ -1225,7 +1225,7 @@ dependencies = [
 [[package]]
 name = "prover"
 version = "0.1.0"
-source = "git+https://github.com/dartdart26/whir?branch=petar%2Fseparate-verifier-to-upstream#228b961811d0e9ddbdc2d803d9ffd6d6b6a257fb"
+source = "git+https://github.com/dartdart26/whir?rev=87b63e022320e841680fe8ce3dfab690952bb4fe#87b63e022320e841680fe8ce3dfab690952bb4fe"
 dependencies = [
  "ark-crypto-primitives",
  "ark-ff",
@@ -2186,7 +2186,7 @@ checksum = "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65"
 [[package]]
 name = "verifier"
 version = "0.1.0"
-source = "git+https://github.com/dartdart26/whir?branch=petar%2Fseparate-verifier-to-upstream#228b961811d0e9ddbdc2d803d9ffd6d6b6a257fb"
+source = "git+https://github.com/dartdart26/whir?rev=87b63e022320e841680fe8ce3dfab690952bb4fe#87b63e022320e841680fe8ce3dfab690952bb4fe"
 dependencies = [
  "ark-crypto-primitives",
  "ark-ff",

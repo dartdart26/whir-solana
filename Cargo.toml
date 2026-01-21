@@ -31,10 +31,10 @@ spongefish = { git = "https://github.com/arkworks-rs/spongefish", rev = "ecb4f08
     "arkworks-algebra",
 ] }
 spongefish-pow = { git = "https://github.com/arkworks-rs/spongefish", rev = "ecb4f08373ed930175585c856517efdb1851fb47", default-features = false }
-whir-common = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "common", default-features = false }
+whir-common = { git = "https://github.com/dartdart26/whir", rev = "87b63e022320e841680fe8ce3dfab690952bb4fe", package = "common", default-features = false }
 whir-config = { path = "config" }
-whir-prover = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "prover" }
-whir-verifier = { git = "https://github.com/dartdart26/whir", branch = "petar/separate-verifier-to-upstream", package = "verifier" }
+whir-prover = { git = "https://github.com/dartdart26/whir", rev = "87b63e022320e841680fe8ce3dfab690952bb4fe", package = "prover" }
+whir-verifier = { git = "https://github.com/dartdart26/whir", rev = "87b63e022320e841680fe8ce3dfab690952bb4fe", package = "verifier" }
 
 [profile.release]
 opt-level = 3
